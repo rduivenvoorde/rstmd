@@ -12,7 +12,7 @@ most powerful features of QGIS. You can use them to control things like labellin
 behaviour, symbology behaviour, map composition behaviour and calculate values for
 attributes.
 
-PUT IMG HERE
+![Expressions map1](images/en/expressionsmap.png "Expressions map2")
 
 You try:
 
