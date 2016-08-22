@@ -16,12 +16,22 @@ attributes.
 ## You try:
 
 **Goal**: Use an expression to scale the symbol size of cities according to their population.
+
 * Start a new project, set the CRS to 4326
 * Load the 10m places layer
 * Filter / subset the layer as per the table on right
 * Find out the minimum (A) and maximum (B) values of pop_max
 * Edit the data defined property for the symbol size as per the size property in the table, right.
 * Make sure to substitute A and B with the real values your discovered in the step above...
+
+Name | Value
+--- | ---
+Places | filter "featurecla"= 'Admin-0capital'
+Style | Single symbol
+Marker | Capital
+Size | scale_linear(pop_max, A, B, 8, 18)
+
+
 
 
 ## Check your results:
@@ -60,16 +70,16 @@ for these!
 
 1. Which expression below will calculate the area of every feature? Use
 experimentation in the field calculator to verify your answer:
-  a) @area
-  b) area = $area
-  c) $area
+  * a) @area
+  * b) area = $area
+  * c) $area
 
 2. Figure out which of these expression(s) you would use to change the outline
 colour of a symbol from the places when max_pop is larger then 5 million
 people. Experiment in the symbol properties panel:
-  a) CASE WHEN pop_max > 5000000 THEN color_rgb(255,0,0) ELSE color_rgb(0,0,0) END
-  b) IF(pop_max > 5000000, color_rgb(255,0,0), color_rgb(0,0,0))
-  c) if pop_max is > 5000000 then red else black
+  * a) CASE WHEN pop_max > 5000000 THEN color_rgb(255,0,0) ELSE color_rgb(0,0,0) END
+  * b) IF(pop_max > 5000000, color_rgb(255,0,0), color_rgb(0,0,0))
+  * c) if pop_max is > 5000000 then red else black
 
 # Further reading:
 
