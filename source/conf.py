@@ -149,7 +149,7 @@ html_theme = 'alabaster'
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #
-# html_logo = None
+#html_logo = '_static/qgislogo.png'
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -244,18 +244,33 @@ htmlhelp_basename = 'rstmddoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
+# see http://www.sphinx-doc.org/en/stable/config.html#options-for-latex-output
+
+latex_additional_files = '_static/qgisbackground.png',
+
 latex_elements = {
      # The paper size ('letterpaper' or 'a4paper').
      #
      # 'papersize': 'letterpaper',
+     'papersize': 'a4paper',
 
      # The font size ('10pt', '11pt' or '12pt').
      #
      # 'pointsize': '10pt',
 
+
      # Additional stuff for the LaTeX preamble.
      #
-     # 'preamble': '',
+     # changing font to sans serif
+     #
+     # adding a wallpaper for every page (from _static dir, 
+     #   see 'latex_additional_files')
+     # http://sunsite.informatik.rwth-aachen.de/ftp/pub/mirror/ctan/macros/latex/contrib/wallpaper/wallpapermanual.pdf
+     'preamble':  (
+         '% Added by Richard\n'
+         '\\renewcommand{\\familydefault}{\\sfdefault}\n'
+         '\\usepackage{wallpaper}\n'
+         '\\LRCornerWallPaper{1}{qgisbackground.png}\n')
 
      # Latex figure (float) alignment
      #
@@ -273,7 +288,7 @@ latex_documents = [
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 #
-# latex_logo = None
+latex_logo = '_static/qgislogo.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
